@@ -19,7 +19,7 @@
             src = fetchGit {
               url = "https://github.com/kristoff-it/superhtml.git";
               rev = commit;
-              ref = "dev";
+              ref = "main";
               shallow = true;
             };
             installPhase = ''
