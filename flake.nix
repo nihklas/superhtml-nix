@@ -1,36 +1,48 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    zig2nix.url = "github:Cloudef/zig2nix";
   };
 
   outputs = {
     self,
-    nixpkgs,
-    flake-utils,
-  }:
-    flake-utils.lib.eachDefaultSystem
-    (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-        version = "v0.5.3";
-      in
-        with pkgs; {
-          packages.default = stdenv.mkDerivation {
-            name = "superhtml";
-            version = version;
-            src = fetchTarball {
-              url = "https://github.com/kristoff-it/superhtml/archive/refs/tags/${version}.tar.gz";
-              sha256 = "0z4qz9d5ap02x5ssaw7lh2da5g9qsapydy5dmc7aqjp79r5wgvmc";
+    zig2nix,
+  }: let
+    outputs =
+      zig2nix.inputs.flake-utils.lib.eachDefaultSystem
+      (
+        system: let
+          pkgs = env.pkgs;
+          env = zig2nix.outputs.zig-env.${system} {};
+          commit = pkgs.lib.strings.fileContents ./commit;
+          srcWithLock = pkgs.stdenv.mkDerivation {
+            name = "src-with-lock";
+            src = fetchGit {
+              url = "https://github.com/kristoff-it/superhtml.git";
+              rev = commit;
+              ref = "dev";
+              shallow = true;
             };
-            buildInputs = [zig];
-            preBuild = "export HOME=$TMPDIR";
             installPhase = ''
-              runHook preInstall
-              zig build --prefix $out install
-              runHook postInstall
+              mkdir -p $out
+              cp -r $src/* $out
+              cp ${self}/build.zig.zon2json-lock $out/build.zig.zon2json-lock
             '';
           };
+          bin = env.package {
+            name = "superhtml";
+            src = env.pkgs.lib.cleanSource srcWithLock;
+            version = commit;
+          };
+        in {
+          packages.default = bin;
+          apps.update = env.app [env.zon2json-lock pkgs.wget pkgs.git] "./update.sh";
         }
-    );
+      );
+  in
+    outputs
+    // {
+      overlays.default = final: prev: {
+        zigscient = outputs.packages.${prev.system}.default;
+      };
+    };
 }

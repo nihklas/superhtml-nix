@@ -1,0 +1,29 @@
+.{
+    .name = "superhtml",
+    .version = "0.4.0",
+    .dependencies = .{
+        .@"zig-lsp-kit" = .{
+            .url = "git+https://github.com/kristoff-it/zig-lsp-kit#b4bf61d7fbf9cf7cfdb6f01b211947d2de3e42fd",
+            .hash = "1220b9ce6dc0e1fbcd9e7b406ab164344f81774351495f860a90729187c3c058ef4f",
+        },
+        .@"known-folders" = .{
+            .url = "git+https://github.com/ziglibs/known-folders.git#0ad514dcfb7525e32ae349b9acc0a53976f3a9fa",
+            .hash = "12209cde192558f8b3dc098ac2330fc2a14fdd211c5433afd33085af75caa9183147",
+        },
+        .scripty = .{
+            .url = "git+https://github.com/kristoff-it/scripty#df8c11380f9e9bec34809f2242fb116d27cf39d6",
+            .hash = "122014e78d7c69d93595993b3231f3141368e22634b332b0b91a2fb73a8570f147a5",
+        },
+        .@"zig-afl-kit" = .{
+            .url = "git+https://github.com/kristoff-it/zig-afl-kit#f003bfe714f2964c90939fdc940d5993190a66ec",
+            .hash = "1220f2d8402bb7bbc4786b9c0aad73910929ea209cbd3b063842371d68abfed33c1e",
+            .lazy = true,
+        },
+    },
+    .paths = .{
+        "LICENSE",
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
