@@ -1,22 +1,37 @@
 {
-  "12205f5e7505c96573f6fc5144592ec38942fb0a326d692f9cddc0c7dd38f9028f29": {
-    "name": "known_folders",
-    "url": "https://github.com/ziglibs/known-folders/archive/1cceeb70e77dec941a4178160ff6c8d05a74de6f.tar.gz",
-    "hash": "sha256-Dsqi1gZ0TnLTikJRvW/7gcNrOb08lEnTArC3CcIhEKA="
+  "1220b9ce6dc0e1fbcd9e7b406ab164344f81774351495f860a90729187c3c058ef4f": {
+    "name": "zig-lsp-kit",
+    "url": "git+https://github.com/kristoff-it/zig-lsp-kit#b4bf61d7fbf9cf7cfdb6f01b211947d2de3e42fd",
+    "hash": "sha256-6mlnPTLBXZQwWXstV+h1PAKtMq8RGcJM2dRJ8NqqqtU="
   },
   "1220102cb2c669d82184fb1dc5380193d37d68b54e8d75b76b2d155b9af7d7e2e76d": {
     "name": "diffz",
     "url": "https://github.com/ziglibs/diffz/archive/ef45c00d655e5e40faf35afbbde81a1fa5ed7ffb.tar.gz",
     "hash": "sha256-Hdj0Z4Fxv9JHaqdHQ+SLzhCq0rkMLfA406xrDvN/w7o="
   },
-  "12208e12a10e78de19f140acae65e6edc20189459dd208d5f6b7afdf0aa894113d1b": {
-    "name": "lsp-codegen",
-    "url": "https://github.com/zigtools/zig-lsp-codegen/archive/e1f281f67ac2cb8c19d3cabe9cfae46fde691c56.tar.gz",
-    "hash": "sha256-CUUbT/23NaEh9E55MhZTTdAZckMt+VxSZDM5vIdXyeA="
+  "12209cde192558f8b3dc098ac2330fc2a14fdd211c5433afd33085af75caa9183147": {
+    "name": "known-folders",
+    "url": "git+https://github.com/ziglibs/known-folders.git#0ad514dcfb7525e32ae349b9acc0a53976f3a9fa",
+    "hash": "sha256-X+XkFj56MkYxxN9LUisjnkfCxUfnbkzBWHy9pwg5M+g="
   },
-  "122022a478dccaed1309fb5d022f4041eec45d40c93a855ed24fad970774c2426d91": {
-    "name": "tracy",
-    "url": "https://github.com/wolfpld/tracy/archive/refs/tags/v0.11.1.tar.gz",
-    "hash": "sha256-LBHKgW8rdWvicw+GsAkpIEGfPavHpxc4Kf/Yl9kYiKE="
+  "122014e78d7c69d93595993b3231f3141368e22634b332b0b91a2fb73a8570f147a5": {
+    "name": "scripty",
+    "url": "git+https://github.com/kristoff-it/scripty#df8c11380f9e9bec34809f2242fb116d27cf39d6",
+    "hash": "sha256-qVm8pIfT1mHL1zanqYdFm/6AVH8poXKqLtz4+2j+F/A="
+  },
+  "1220f2d8402bb7bbc4786b9c0aad73910929ea209cbd3b063842371d68abfed33c1e": {
+    "name": "zig-afl-kit",
+    "url": "git+https://github.com/kristoff-it/zig-afl-kit#f003bfe714f2964c90939fdc940d5993190a66ec",
+    "hash": "sha256-tJ6Ln1SY4WjFZXUWQmgggsUfkd59QgmIpgdInMuv4PI="
+  },
+  "1220010a1edd8631b2644476517024992f8e57f453bdb68668720bb590d168faf7c8": {
+    "name": "AFLplusplus",
+    "url": "git+https://github.com/allyourcodebase/AFLplusplus#032984eabf5a35af386a3d0e542df7686da339c1",
+    "hash": "sha256-KB3QnKAQQ+5CKvJVrhMveMGpF3NTrlwpIyLHVIB96hs="
+  },
+  "12200966011c3dd6979d6aa88fe23061fdc6da1f584a6fb1f7682053a0b01e409dbc": {
+    "name": "AFLplusplus",
+    "url": "https://github.com/AFLplusplus/AFLplusplus/archive/v4.21c.tar.gz",
+    "hash": "sha256-EffHfTfP9uf2WsfMVbq3kB4MYgjoRaOHZDlNBO1WezA="
   }
 }

@@ -13,7 +13,7 @@
         system: let
           pkgs = env.pkgs;
           env = zig2nix.outputs.zig-env.${system} {};
-          commit = "67f266845280159a2344cee4743b72e9751210da";
+          commit = "1fda813bd9dc108e962e018e6a327434767ad616";
           srcWithLock = pkgs.stdenv.mkDerivation {
             name = "src-with-lock";
             src = fetchGit {
