@@ -42,7 +42,7 @@
     outputs
     // {
       overlays.default = final: prev: {
-        zigscient = outputs.packages.${prev.system}.default;
+        superhtml = outputs.packages.${prev.system}.default;
       };
     };
 }
