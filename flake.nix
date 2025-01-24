@@ -13,7 +13,7 @@
         system: let
           pkgs = env.pkgs;
           env = zig2nix.outputs.zig-env.${system} {};
-          commit = "1fda813bd9dc108e962e018e6a327434767ad616";
+          commit = "e6eba40bf54dd94d842154be0389c53a37be8dc8";
           srcWithLock = pkgs.stdenv.mkDerivation {
             name = "src-with-lock";
             src = fetchGit {
@@ -35,7 +35,7 @@
           };
         in {
           packages.default = bin;
-          apps.update = env.app [env.zon2json-lock pkgs.wget pkgs.git] "./update.sh";
+          apps.update = env.app [env.zon2json-lock pkgs.wget pkgs.git pkgs.gnused] "./update.sh";
         }
       );
   in
